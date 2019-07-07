@@ -59,6 +59,9 @@ apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get -y purge
 
+#install chef
+curl -L https://omnitruck.chef.io/install.sh | sudo bash
+
 # remove myself to prevent any unintended changes at a later stage
 rm $0
 
