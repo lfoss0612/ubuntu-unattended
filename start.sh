@@ -60,7 +60,16 @@ apt-get -y autoremove
 apt-get -y purge
 
 #install chef
-curl -L https://omnitruck.chef.io/install.sh | sudo bash
+curl -L https://omnitruck.chef.io/install.sh | sudo 
+
+if [ ! -f /etc/samba/smb.conf.orig ]; then
+    cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
+fi
+
+git clone https://github.com/lfoss0612/chef-repo.git
+cd chef-repo
+chef-client -z-j node.json
+
 
 # remove myself to prevent any unintended changes at a later stage
 rm $0
@@ -69,4 +78,4 @@ rm $0
 echo " DONE; rebooting ... "
 
 # reboot
-reboot
+#reboot
