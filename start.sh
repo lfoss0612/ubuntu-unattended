@@ -68,7 +68,7 @@ fi
 
 git clone https://github.com/lfoss0612/chef-repo.git
 cd chef-repo
-chef-client -z -j node.json
+chef-client --chef-license accept -z -j node.json
 
 
 # remove myself to prevent any unintended changes at a later stage
