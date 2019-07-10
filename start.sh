@@ -60,7 +60,7 @@ apt-get -y autoremove
 apt-get -y purge
 
 #install chef
-curl -L https://omnitruck.chef.io/install.sh | sudo 
+curl -L https://omnitruck.chef.io/install.sh | sudo bash
 
 if [ ! -f /etc/samba/smb.conf.orig ]; then
     cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
